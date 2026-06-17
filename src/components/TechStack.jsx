@@ -57,7 +57,7 @@ export default function TechStack() {
       // TechStack sits at Z=10000 in the virtual camera timeline.
       // Journey exits at around camZ≈9000.
       // We want TechStack to appear after Journey's zoom-in phase.
-      const SECTION_Z = 10000;
+      const SECTION_Z = 12000;
       const dist = SECTION_Z - camZ.pos; // positive => not reached yet
 
       let opacity = 0;

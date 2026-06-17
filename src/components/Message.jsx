@@ -14,7 +14,7 @@ export default function Message() {
       // Message section sits at Z=34000
       // Enter: 31000 to 34000 (dist 3000 to 0)
       // Dwell: 34000 onwards (dist <= 0)
-      const SECTION_Z = 34000;
+      const SECTION_Z = 39000;
       const dist = SECTION_Z - camZ.pos;
 
       let opacity = 0;

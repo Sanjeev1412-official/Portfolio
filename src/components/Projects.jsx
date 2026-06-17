@@ -179,7 +179,7 @@ export default function Projects() {
       // Enter: 15000-18000 (dist 3000 to 0)
       // Dwell: 18000-21000 (dist 0 to -3000)
       // Exit:  21000-24000 (dist -3000 to -6000)
-      const SECTION_Z = 18000;
+      const SECTION_Z = 21000;
       const dist = SECTION_Z - camZ.pos;
 
       let opacity = 0;

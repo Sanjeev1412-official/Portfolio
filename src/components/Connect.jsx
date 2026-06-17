@@ -157,7 +157,7 @@ export default function Connect() {
       // Connect section sits at Z=26000
       // Enter: 23000 to 26000 (dist 3000 to 0)
       // Dwell: 26000 onwards (dist <= 0)
-      const SECTION_Z = 26000;
+      const SECTION_Z = 31000;
       const dist = SECTION_Z - camZ.pos;
 
       let opacity = 0;

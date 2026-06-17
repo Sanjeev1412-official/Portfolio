@@ -26,7 +26,7 @@ function physicsLoop() {
   // Frame-independent smoothing (approx matches old 0.15 multiplier at 60fps)
   PhysicsStore.sp += (PhysicsStore.progress - PhysicsStore.sp) * 10 * dt;
   
-  const tZ = PhysicsStore.sp * 40000;
+  const tZ = PhysicsStore.sp * 45000;
   PhysicsStore.camZ = springStep(PhysicsStore.camZ.pos, PhysicsStore.camZ.vel, tZ, 20, 0.75, dt);
 }
 requestAnimationFrame(physicsLoop);

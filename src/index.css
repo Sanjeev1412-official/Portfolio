@@ -1254,6 +1254,15 @@ body.cursor-hover #cursor-trail {
   height: 16px;
 }
 
+/* ── Card Physics Wrapper ────────────────────────────────── */
+.htl-card-physics-wrapper {
+  width: 100%;
+  will-change: transform, opacity;
+  transition: none !important;
+  display: flex;
+  flex-direction: column;
+}
+
 /* ── Card ────────────────────────────────────────────────── */
 .htl-card {
   background: rgba(255, 255, 255, 0.01);
