@@ -4168,3 +4168,288 @@ body.cursor-hover #cursor-trail {
   background: linear-gradient(90deg, rgba(255,255,255,0.1), transparent);
   margin-bottom: 1.2rem;
 }
+
+/* ============================================================
+   MOBILE VERTICAL TIMELINE SYSTEM
+   ============================================================ */
+@media (max-width: 768px) {
+  .journey-inner {
+    padding: 6vh 3vw 2vh 3vw;
+    justify-content: flex-start;
+    gap: 0;
+  }
+
+  .journey-header {
+    margin-bottom: 1rem;
+  }
+
+  .vtl-section {
+    position: relative;
+    width: 100%;
+    flex-grow: 1;
+    margin-top: 1vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: visible;
+  }
+
+  .vtl-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+  }
+
+  .vtl-rail-silver,
+  .vtl-rail-gold {
+    position: absolute;
+    left: 35px;
+    top: 105px;
+    height: calc(100vh - 245px);
+    width: 1.5px;
+    pointer-events: none;
+    z-index: 1;
+    border-radius: 1px;
+  }
+
+  .vtl-rail-silver {
+    background: linear-gradient(180deg,
+      transparent 0%,
+      rgba(255,255,255,0.3) 10%,
+      rgba(255,255,255,0.3) 90%,
+      transparent 100%
+    );
+    box-shadow: 0 0 8px rgba(255,255,255,0.2);
+  }
+
+  .vtl-rail-gold {
+    background: linear-gradient(180deg,
+      transparent 0%,
+      rgba(255,170,0,0.4) 10%,
+      rgba(255,170,0,0.4) 90%,
+      transparent 100%
+    );
+    box-shadow: 0 0 8px rgba(255,170,0,0.2);
+  }
+
+  .vtl-track {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    will-change: transform;
+  }
+
+  .vtl-node {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  .vtl-node-physics-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    will-change: transform, opacity;
+  }
+
+  .vtl-dot {
+    position: absolute;
+    left: 35px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    border: 2px solid rgba(255,255,255,0.8);
+    background: var(--black);
+    z-index: 4;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .vtl-dot--gold {
+    border-color: rgba(255,170,0,0.9);
+    box-shadow: 0 0 10px rgba(255,170,0,0.4);
+  }
+
+  .vtl-stem {
+    position: absolute;
+    left: 35px;
+    width: 25px;
+    height: 1.5px;
+    background: linear-gradient(90deg, rgba(255,255,255,0.4), rgba(255,255,255,0.1));
+    z-index: 3;
+  }
+
+  .vtl-stem--gold {
+    background: linear-gradient(90deg, rgba(255,170,0,0.6), rgba(255,170,0,0.15));
+  }
+
+  .vtl-card-wrap {
+    position: absolute;
+    left: 70px;
+    right: 15px;
+    max-width: calc(100% - 85px);
+  }
+
+  /* Compact Overrides for Mobile Journey Cards */
+  .vtl-card-wrap .htl-card {
+    padding: 1rem 0.95rem;
+    border-radius: 10px;
+  }
+
+  .vtl-card-wrap .htl-title {
+    font-size: 1.05rem;
+    margin: 0.5rem 0;
+  }
+
+  .vtl-card-wrap .htl-place {
+    font-size: 0.76rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .vtl-card-wrap .htl-year {
+    font-size: 0.65rem;
+    padding: 2.5px 7px;
+    margin-bottom: 0.3rem;
+  }
+
+  .vtl-card-wrap .htl-tag {
+    font-size: 0.6rem;
+    padding: 2.5px 7px;
+  }
+
+  .vtl-card-wrap .htl-company {
+    font-size: 1.05rem;
+    margin: 0.3rem 0;
+  }
+
+  .vtl-card-wrap .htl-role-title {
+    font-size: 0.78rem;
+  }
+
+  .vtl-card-wrap .htl-role-year {
+    font-size: 0.64rem;
+  }
+
+  .vtl-card-wrap .htl-role {
+    padding-left: 0.5rem;
+    gap: 0.1rem;
+  }
+
+  .vtl-card-wrap .htl-roles {
+    gap: 0.25rem;
+  }
+
+  .vtl-card-wrap .htl-tags {
+    gap: 0.2rem;
+    margin-top: 0.15rem;
+  }
+
+  .vtl-card-wrap .htl-exp-tag {
+    font-size: 0.56rem;
+    padding: 2px 5px;
+  }
+
+  .htl-section-label--mobile {
+    position: absolute;
+    left: 15px;
+    top: 15px;
+    z-index: 10;
+    pointer-events: none;
+    transition: all 0.3s ease;
+  }
+
+  /* Mobile timeline visual section dividers */
+  .vtl-separator-physics-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    will-change: transform, opacity;
+  }
+
+  .vtl-separator-dot {
+    position: absolute;
+    left: 35px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    border: 3px solid rgba(255, 170, 0, 0.95);
+    background: var(--black);
+    z-index: 5;
+    box-shadow: 0 0 12px rgba(255, 170, 0, 0.6);
+  }
+
+  .vtl-separator-dot--silver {
+    border-color: rgba(255, 255, 255, 0.85);
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.4);
+  }
+
+  .vtl-separator-stem {
+    position: absolute;
+    left: 35px;
+    width: 30px;
+    height: 1.5px;
+    background: rgba(255, 170, 0, 0.4);
+    z-index: 3;
+  }
+
+  .vtl-separator-stem--silver {
+    background: rgba(255, 255, 255, 0.3);
+  }
+
+  .vtl-separator-badge {
+    position: absolute;
+    left: 75px;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 6px 14px;
+    background: rgba(255, 170, 0, 0.08);
+    border: 1px solid rgba(255, 170, 0, 0.45);
+    border-radius: 6px;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.05),
+                0 0 15px rgba(255, 170, 0, 0.1);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+
+  .vtl-separator-badge--silver {
+    background: rgba(255, 255, 255, 0.03);
+    border-color: rgba(255, 255, 255, 0.25);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.05),
+                0 0 15px rgba(255, 255, 255, 0.03);
+  }
+
+  .vtl-separator-badge .vtl-separator-icon {
+    font-size: 0.65rem;
+    color: rgba(255, 170, 0, 0.95);
+  }
+
+  .vtl-separator-badge--silver .vtl-separator-icon {
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  .vtl-separator-badge .vtl-separator-title {
+    font-family: var(--font-hud);
+    font-size: 0.65rem;
+    letter-spacing: 0.25em;
+    font-weight: 800;
+    color: rgba(255, 170, 0, 0.95);
+    text-transform: uppercase;
+  }
+
+  .vtl-separator-badge--silver .vtl-separator-title {
+    color: rgba(255, 255, 255, 0.85);
+  }
+}
